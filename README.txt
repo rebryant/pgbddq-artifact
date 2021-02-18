@@ -58,29 +58,29 @@ clean:
 superclean:
   Delete all generated files, including the benchmark data
 
-4. Results
+4. Interpreting the Results
 
 The following shows the printout generated for the benchmark.  These
 were measured on a 3.0 GHz Intel Core i7-9700 CPU running Linux.
 
 The column headings are:
 
-Proof: Proof type.  Either DUAL, SAT (satsifaction), or REF
-       (refutation).
+  Proof: Proof type.  Either DUAL, SAT (satsifaction), or REF
+         (refutation).
 
-Result: Was the formula true or false
+  Result: Was the formula true or false
 
-N: Size of board
+  N: Size of board
 
-I Cls: Input clauses
+  I Cls: Input clauses
 
-T Cls: Total clauses
+  T Cls: Total clauses
 
-Solve: Elapsed time (in seconds) used by the solver.
+  Solve: Elapsed time (in seconds) used by the solver.
 
-Qproof: Elapsed time (in seconds) used by the checker qchecker.py.
+  Qproof: Elapsed time (in seconds) used by the checker qchecker.py.
 
-Qrat: Elapsed time (in seconds) used by the checker qrat-trim.
+  Qrat: Elapsed time (in seconds) used by the checker qrat-trim.
 
 Here are the results with the solver generating QPROOF proof files:
 ****************************************************************
@@ -115,4 +115,22 @@ REF	FALSE	05	81	9877	0.12		0.215
 REF	FALSE	10	664	210605	2.83		15.844
 REF	FALSE	15	1728	628361	8.94		88.232
 ****************************************************************
+
+5. To get more information.
+ 
+Log files for the individual runs are in files named
+benchmarks/lindom/{qproof,qrat}/*.data.
+
+The file names are a bit cryptic, but they are designed to provide the
+entries to the tables when listed in sorted order.  For example, the
+first file in the qproof directory is named:
+"lindom-3A-DUAL-TRUE-05-bd.data" with the parts of the name indicating:
+
+  lindom: Linear Domino benchmark
+  3A:     Forms the first part of Table 3 in the paper.
+  DUAL:   Dual proof type
+  TRUE:   The formula is true
+  05:     N=5
+  bd:     Formula generated for B as the player, with a dual proof
+
 
