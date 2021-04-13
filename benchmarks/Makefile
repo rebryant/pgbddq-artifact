@@ -1,3 +1,5 @@
+#!/bin/bash
+SHELL = /bin/bash
 
 run:
 	(pushd lindom; make run INTERP=$(INTERP))
